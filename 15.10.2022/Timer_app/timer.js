@@ -21,4 +21,4 @@ function calculateDifference(selectedTimeElement) {
   document.getElementById("seconds").innerHTML = differenceInSeconds;
 }
 
-setInterval(showDateDiff, 1000);
+setInterval(showDateDiff, 1000); //invoking the function
