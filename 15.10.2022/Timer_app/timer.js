@@ -1,24 +1,29 @@
-function showDateDiff() {
-  let selectedTimeElement = document.getElementById("dateTime");
-  setInterval(calculateDifference, 1000, selectedTimeElement);
-}
+document.getElementById("submit").onclick = (e) => {
+  e.preventDefault();
+  const target = document.getElementById("dateTime").value;
+  let interval = setInterval(function () {
+    let current = new Date();
+    let diff = new Date(target).getTime() - current.getTime();
 
-function calculateDifference(selectedTimeElement) {
-  let now = new Date();
-  let future = new Date(selectedTimeElement.value);
-  let diff = future.getTime() - now.getTime();
-  let differenceInDays = Math.floor(diff / (1000 * 24 * 60 * 60));
-  let differenceInHours = Math.floor(
-    (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-  );
-  let differenceInMinutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    document.getElementById("days").innerText = Math.floor(
+      diff / (1000 * 60 * 60 * 24)
+    );
+    document.getElementById("hours").innerText = Math.floor(
+      (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    document.getElementById("minutes").innerText = Math.floor(
+      (diff % (1000 * 60 * 60)) / (1000 * 60)
+    );
+    document.getElementById("seconds").innerText = Math.floor(
+      (diff % (1000 * 60)) / 1000
+    );
 
-  let differenceInSeconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-  document.getElementById("day").innerHTML = differenceInDays;
-  document.getElementById("hours").innerHTML = differenceInHours;
-  document.getElementById("minutes").innerHTML = differenceInMinutes;
-  document.getElementById("seconds").innerHTML = differenceInSeconds;
-}
-
-setInterval(showDateDiff, 1000); //invoking the function
+    if (diff < 0) {
+      clearInterval(interval);
+      document.getElementById("days").innerText = "N.A";
+      document.getElementById("hours").innerText = "N.A";
+      document.getElementById("minutes").innerText = "N.A";
+      document.getElementById("seconds").innerText = "N.A";
+    }
+  }, 1000);
+};
