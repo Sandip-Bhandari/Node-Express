@@ -4,7 +4,6 @@ function* getPrices() {
 
   return "$100000";
 }
-// gcghcxvcbvch
 let it = getPrices();
 console.log(it.next());
 console.log(it.next());
