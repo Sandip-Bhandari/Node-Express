@@ -18,7 +18,6 @@ function Account() {
   };
 }
 
-// console.log(Account().getBalance());
 let acc = Account();
 console.log(acc.balance);
 console.log(acc.getBalance());
