@@ -25,6 +25,6 @@ expressApp.get("/user", (req, res) => {
   res.end();
 });
 
-expressApp.listen(8082, () => {
+expressApp.listen(9022, () => {
   console.log("Server is up and running");
 });

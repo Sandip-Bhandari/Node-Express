@@ -17,6 +17,6 @@ expressApp.get("/user", (req, res) => {
   res.redirect("/user/1");
 });
 
-expressApp.listen(1515, () => {
+expressApp.listen(9022, () => {
   console.log("server is up and running");
 });
