@@ -5,11 +5,11 @@ let bodyParser = require("body-parser");
 let users = [
   {
     id: 123,
-    name: "Manjula",
+    name: "Sandip",
   },
   {
     id: 341,
-    name: "Kiran",
+    name: "Sanjay",
   },
 ];
 
