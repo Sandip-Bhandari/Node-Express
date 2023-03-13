@@ -51,6 +51,7 @@ expressApp.delete("/user/:userId", (req, res) => {
   users = users.filter((user) => {
     return user.id != userIdToDelete;
   });
+
   res.send("User deleted").status(200);
   res.end();
 });
